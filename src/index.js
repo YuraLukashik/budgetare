@@ -1,7 +1,8 @@
 "use strict";
 
-var console = require("console");
+var React = require("react");
+var App = require("./component.jsx");
 
-module.exports = function App(){
-    console.log("hello world!");
-};
+React.render(<App />, document.body);
+
+window.React = React;
