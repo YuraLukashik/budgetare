@@ -32,10 +32,6 @@ module.exports = {
             "dest": "public/images"
         }
     ],
-    "test": {
-        "configFile": __dirname + '/../../tests/karma.conf.js',
-        "singleRun": true
-    },
     "styles": [
         {
             "src": styles,
