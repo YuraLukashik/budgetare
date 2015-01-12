@@ -1,3 +1,13 @@
+var fonts = [
+    'node_modules/bootstrap/dist/fonts/*',
+    'node_modules/font-awesome/fonts/*'
+];
+
+var styles = [
+    'node_modules/bootstrap/dist/css/bootstrap.min.css',
+    'node_modules/font-awesome/css/font-awesome.css'
+];
+
 module.exports = {
     "browserify": [
         {
@@ -6,42 +16,51 @@ module.exports = {
             "dest": "public/scripts"
         }
     ],
-//    "resources": {
-//        "fonts": {
-//            "src": [],
-//            "dest": vendor.fonts.dest.base
-//        },
-//        "images": {
-//            "src": [
-//                "src/client/**/*.png",
-//                "src/client/**/*.jpeg",
-//                "src/client/**/*.jpg",
-//                "src/client/**/*.gif",
-//                "src/client/**/*.ico"
-//            ],
-//            "dest": "public/images"
-//        }
-//    },
+    "resources": [
+        {
+            "src": fonts,
+            "dest": 'public/fonts'
+        },
+        {
+            "src": [
+                "src/client/**/*.png",
+                "src/client/**/*.jpeg",
+                "src/client/**/*.jpg",
+                "src/client/**/*.gif",
+                "src/client/**/*.ico"
+            ],
+            "dest": "public/images"
+        }
+    ],
     "test": {
         "configFile": __dirname + '/../../tests/karma.conf.js',
         "singleRun": true
     },
-//    "styles": [
-//        vendor.styles,
-//        app.styles,
-//        front.styles
-//    ],
+    "styles": [
+        {
+            "src": styles,
+            "dest": {
+                "filename": "vendor.min.css",
+                "base": "public/styles"
+            }
+        },
+        {
+            "src": [
+                'src/**/*.css'
+            ],
+            "dest": {
+                "filename": "app.min.css",
+                "base": "public/styles"
+            }
+        }
+    ],
     "watch": {
-//        "watch": [
-//            {
-//                "src": app.styles.src,
-//                "name": "styles"
-//            },
-//            {
-//                "src": front.styles.src,
-//                "name": "styles"
-//            }
-//        ],
+        "watch": [
+            {
+                "src": ['src/**/*.css'],
+                "name": "styles"
+            }
+        ],
         "watchify": [
             {
                 "src": "./src/index.js",

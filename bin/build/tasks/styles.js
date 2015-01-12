@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
-var _ = require('underscore');
+var _ = require('lodash');
 
 module.exports = function(config){
     return function(){
@@ -11,5 +11,5 @@ module.exports = function(config){
                 .pipe(minifyCSS())
                 .pipe(gulp.dest(value.dest.base));
         });
-    }
+    };
 };
