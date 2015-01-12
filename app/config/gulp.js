@@ -48,9 +48,19 @@ module.exports = {
             "src": [
                 'src/**/*.css'
             ],
+            "preprocess": true,
             "dest": {
                 "filename": "app.min.css",
                 "base": "public/styles"
+            }
+        }
+    ],
+    "scripts": [
+        {
+            "src": [],
+            "dest": {
+                "filename": "vendor.min.js",
+                "base": "public/scripts"
             }
         }
     ],

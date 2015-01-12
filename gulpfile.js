@@ -3,10 +3,11 @@ var gulp = require('./bin/build/')([
     'browserify',
     'resources',
     'styles',
+    'scripts',
     'watch'
 ], config);
 
-gulp.task('init', ['resources', 'styles']);
+gulp.task('init', ['resources', 'styles', 'scripts']);
 
 gulp.task('build', ['browserify', 'init']);
 
