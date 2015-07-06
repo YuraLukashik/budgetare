@@ -1,8 +1,9 @@
 "use strict";
 
-var React = require("react");
-var App = require("./component.jsx");
+import App from './app.js';
+import config from './config.js';
 
-React.render(<App />, document.body);
+let app = new App;
+app.run(config);
 
-window.React = React;
+export default app;
